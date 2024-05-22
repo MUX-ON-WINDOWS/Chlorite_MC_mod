@@ -1,6 +1,7 @@
 package net.max.maxmod;
 
 import com.mojang.logging.LogUtils;
+import net.max.maxmod.block.ModBlocks;
 import net.max.maxmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTab;
@@ -33,6 +34,7 @@ public class TestMaxMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -53,6 +55,10 @@ public class TestMaxMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CHLORITE);
+            event.accept(ModItems.RAW_CHLORITE);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.CHLORITE_BLOCK);
         }
     }
 

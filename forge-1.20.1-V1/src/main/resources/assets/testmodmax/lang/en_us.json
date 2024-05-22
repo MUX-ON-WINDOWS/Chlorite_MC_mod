@@ -1,3 +1,5 @@
 {
-  "item.testmodmax.chlorite" : "Chlorite"
+  "item.testmodmax.chlorite" : "Chlorite",
+  "item.testmodmax.raw_chlorite" : "Raw Chlorite",
+  "item.testmodmax.chlorite_block": "Chlorite Block"
 }
